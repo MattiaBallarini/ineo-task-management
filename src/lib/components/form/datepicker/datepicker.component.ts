@@ -19,6 +19,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { ErrorMessagePipe } from '../../../pipes';
 
 @Component({
   selector: 'ineo-datepicker',
@@ -29,6 +30,7 @@ import { provideNativeDateAdapter } from '@angular/material/core';
     MatInputModule,
     MatDatepickerModule,
     ReactiveFormsModule,
+    ErrorMessagePipe,
   ],
   templateUrl: './datepicker.component.html',
   styleUrl: './datepicker.component.scss',

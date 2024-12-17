@@ -17,6 +17,7 @@ import {
 } from '../../../directives';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ErrorMessagePipe } from '../../../pipes';
 
 @Component({
   selector: 'ineo-input',
@@ -26,6 +27,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    ErrorMessagePipe,
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',

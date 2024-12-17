@@ -6,5 +6,5 @@
     [errorStateMatcher]="matcher"
     [formControl]="hcd.control"
   ></textarea>
-  <mat-error>{{ hcd.control.errors }}</mat-error>
+  <mat-error>{{ hcd.control.errors | errorMessage }}</mat-error>
 </mat-form-field>

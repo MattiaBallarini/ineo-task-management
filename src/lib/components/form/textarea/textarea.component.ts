@@ -12,6 +12,7 @@ import {
 } from '../../../directives';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ErrorMessagePipe } from '../../../pipes';
 
 @Component({
   selector: 'ineo-textarea',
@@ -21,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
+    ErrorMessagePipe,
   ],
   templateUrl: './textarea.component.html',
   styleUrl: './textarea.component.scss',
