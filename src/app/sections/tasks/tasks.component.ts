@@ -14,6 +14,7 @@ import {
   InputComponent,
   ITask,
   SelectComponent,
+  SkeletonComponent,
   TaskComponent,
   TTaskStatus,
 } from '@lib';
@@ -34,6 +35,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
     MatButtonModule,
     FilterTasksPipe,
     GetStatusesAsSelectOptionPipe,
+    SkeletonComponent,
   ],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss',
@@ -43,6 +45,7 @@ export class TasksComponent {
   private tasksFacade = inject(TasksFacade);
   protected tasks$ = this.tasksFacade.tasks$;
   protected statuses$ = this.tasksFacade.statuses$;
+  protected loading$ = this.tasksFacade.loading$;
   protected removing$ = this.tasksFacade.removing$;
   protected searchForm = new FormControl<string>('');
   protected statusForm = new FormControl<TTaskStatus>('');

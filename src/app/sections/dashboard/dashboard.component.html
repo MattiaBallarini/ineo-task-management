@@ -6,6 +6,7 @@
       <ineo-dashboard-column
         (edit)="openTaskModal($event)"
         (delete)="deleteTask($event)"
+        [loading]="loading$ | async"
         [status]="status"
         [tasks]="tasks | filterTasks : status"
       ></ineo-dashboard-column>

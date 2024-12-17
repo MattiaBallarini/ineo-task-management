@@ -1,27 +1,35 @@
 <ng-container *ngrxLet="tasks$ as tasks">
-  <ng-container *ngrxLet="removing$ as removing">
-    <div class="d-flex flex-column gap-3">
-      <div class="d-flex gap-3 justify-content-end">
-        <ineo-input [formControl]="searchForm" [label]="'Search'"></ineo-input>
-        <ineo-select
-          [options]="statuses$ | async | getStatusesAsSelectOption"
-          [formControl]="statusForm"
-          [label]="'Task status'"
-        ></ineo-select>
-        <button class="mt-2" (click)="openTaskModal()" mat-flat-button>
-          new task
-        </button>
+  <ng-container *ngrxLet="loading$ as loading">
+    <ng-container *ngrxLet="removing$ as removing">
+      <div class="d-flex flex-column gap-3">
+        <div class="d-flex gap-3 justify-content-end">
+          <ineo-input
+            [formControl]="searchForm"
+            [label]="'Search'"
+          ></ineo-input>
+          <ineo-select
+            [options]="statuses$ | async | getStatusesAsSelectOption"
+            [formControl]="statusForm"
+            [label]="'Task status'"
+          ></ineo-select>
+          <button class="mt-2" (click)="openTaskModal()" mat-flat-button>
+            new task
+          </button>
+        </div>
+        <div class="neutral-background d-flex flex-wrap gap-4">
+          @if(loading){
+          <ineo-skeleton [count]="20"></ineo-skeleton>
+          } @else { @for (task of tasks | filterTasks:status():search() ; track
+          task.id) {
+          <ineo-task
+            (edit)="openTaskModal($event)"
+            (delete)="deleteTask($event)"
+            [removing]="removing === task.id"
+            [task]="task"
+          ></ineo-task>
+          } @empty { Empty state } }
+        </div>
       </div>
-      <div class="neutral-background d-flex flex-wrap gap-4">
-        @for (task of tasks | filterTasks:status():search() ; track task.id) {
-        <ineo-task
-          (edit)="openTaskModal($event)"
-          (delete)="deleteTask($event)"
-          [removing]="removing === task.id"
-          [task]="task"
-        ></ineo-task>
-        } @empty { Empty state }
-      </div>
-    </div>
+    </ng-container>
   </ng-container>
 </ng-container>

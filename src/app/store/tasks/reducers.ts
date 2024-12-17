@@ -13,7 +13,6 @@ export const tasksReducer = createReducer<ITasksState>(
   ),
   on(
     actions.GetTasks,
-    actions.GetTaskStatuses,
     (state): ITasksState => ({
       ...state,
       loading: true,
@@ -56,7 +55,6 @@ export const tasksReducer = createReducer<ITasksState>(
     actions.GetTaskStatusesSuccess,
     (state, { statuses }): ITasksState => ({
       ...state,
-      loading: false,
       statuses,
     })
   ),

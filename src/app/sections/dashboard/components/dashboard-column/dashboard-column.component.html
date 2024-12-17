@@ -1,4 +1,6 @@
 <h6>{{ status() }}</h6>
+@if(loading()){<ineo-skeleton [count]="20"></ineo-skeleton>
+} @else{
 <div class="d-flex flex-wrap gap-3">
   @for (task of tasks(); track task.title) {
   <ineo-task
@@ -8,3 +10,4 @@
   ></ineo-task>
   } @empty { Empty state }
 </div>
+}

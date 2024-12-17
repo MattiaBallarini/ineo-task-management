@@ -4,3 +4,4 @@ export * from './form';
 export * from './spinner/spinner.component';
 export * from './task/task.component';
 export * from './badge/badge.component';
+export * from './skeleton/skeleton.component';

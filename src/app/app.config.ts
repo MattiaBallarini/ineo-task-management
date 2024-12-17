@@ -1,11 +1,5 @@
-import {
-  ApplicationConfig,
-  provideZoneChangeDetection,
-  isDevMode,
-} from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import Aura from '@primeng/themes/aura';
-import Material from '@primeng/themes/material';
 import { routes } from './app.routes';
 import { provideStore } from '@ngrx/store';
 import { reducers, metaReducers } from './store/reducers';

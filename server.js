@@ -35,7 +35,9 @@ server.get("/tasks", (req, res) => {
     });
   }
 
-  res.json(tasks);
+  setTimeout(() => {
+    res.json(tasks);
+  }, delay);
 });
 
 server.post("/tasks", (req, res, next) => {
