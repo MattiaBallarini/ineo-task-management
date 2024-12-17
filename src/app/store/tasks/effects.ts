@@ -144,11 +144,7 @@ export class TasksEffects {
 
   taskSuccess$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(
-        actions.CreateTaskSuccess,
-        actions.UpdateTaskSuccess,
-        actions.DeleteTaskSuccess
-      ),
+      ofType(actions.CreateTaskSuccess, actions.UpdateTaskSuccess),
       withLatestFrom(this.store.select(selectors.SelectCurrentPage)),
       tap(() => this.dialog.closeAll()),
       map(([, page]) => ({
