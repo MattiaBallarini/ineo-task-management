@@ -75,7 +75,7 @@ export class TasksEffects {
           this.dialog.open(TaskModalComponent, {
             data: task,
             width: '80vh',
-            minHeight: '60vh',
+            height: '580px',
           })
         )
       ),

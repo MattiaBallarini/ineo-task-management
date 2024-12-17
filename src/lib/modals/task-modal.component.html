@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>{{ !!data ? "Modifica task" : "Crea task" }}</h2>
+<h2 mat-dialog-title>{{ mode() + " task" }}</h2>
 <mat-dialog-content class="mat-typography">
   <ng-container *isLoading="(processing$ | async) || false">
     <ng-container
@@ -7,31 +7,29 @@
       <form [formGroup]="form()" class="w-100 d-flex flex-column gap-3">
         <ineo-input
           [formControlName]="'title'"
-          [label]="'Titolo'"
-          [placeholder]="'pincopallo'"
+          [label]="'Title'"
+          [placeholder]="'Choose a title'"
         ></ineo-input>
         <ineo-datepicker
           [formControlName]="'date'"
-          [label]="'Titolo'"
+          [label]="'Date'"
           [minDate]="today"
-          [placeholder]="'pincopallo'"
         ></ineo-datepicker>
-        <ineo-textarea
-          [formControlName]="'description'"
-          [label]="'Titolo'"
-          [placeholder]="'pincopallo'"
-        ></ineo-textarea>
         <ineo-select
           [formControlName]="'status'"
           [options]="options"
-          [label]="'Titolo'"
-          [placeholder]="'pincopallo'"
+          [label]="'Status'"
         ></ineo-select>
+        <ineo-textarea
+          [formControlName]="'description'"
+          [label]="'Description'"
+          [placeholder]="'Lorem ipsum dolor sit amet...'"
+        ></ineo-textarea>
       </form>
     </ng-container>
   </ng-container>
 </mat-dialog-content>
 <mat-dialog-actions [align]="'end'">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button (click)="submit()" cdkFocusInitial>Install</button>
+  <button mat-button (click)="submit()" cdkFocusInitial>{{ mode() }}</button>
 </mat-dialog-actions>

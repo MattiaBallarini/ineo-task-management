@@ -63,6 +63,10 @@ export class TaskModalComponent {
   protected statuses$ = this.tasksFacade.statuses$;
   protected processing$ = this.tasksFacade.processing$;
 
+  protected mode = computed<'Create' | 'Edit'>(() =>
+    this.data ? 'Edit' : 'Create'
+  );
+
   protected form = computed(
     () =>
       new FormGroup({
