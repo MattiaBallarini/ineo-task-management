@@ -35,6 +35,8 @@ server.get("/tasks", (req, res) => {
     });
   }
 
+  tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
+
   setTimeout(() => {
     res.json(tasks);
   }, delay);
