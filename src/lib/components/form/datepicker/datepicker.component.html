@@ -1,0 +1,15 @@
+<mat-form-field class="w-100">
+  <mat-label>{{ label() }}</mat-label>
+  <input
+    matInput
+    [formControl]="hcd.control"
+    [matDatepicker]="picker"
+    [min]="minDate()"
+    [max]="maxDate()"
+    [errorStateMatcher]="matcher"
+  />
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+  <mat-error>{{ hcd.control.errors }}</mat-error>
+</mat-form-field>

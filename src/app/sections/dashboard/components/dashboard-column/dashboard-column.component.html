@@ -1,0 +1,10 @@
+<h6>{{ status() }}</h6>
+<div class="d-flex flex-wrap gap-3">
+  @for (task of tasks(); track task.title) {
+  <ineo-task
+    (edit)="edit.emit(task)"
+    (delete)="delete.emit(task?.id || '')"
+    [task]="task"
+  ></ineo-task>
+  } @empty { Empty state }
+</div>

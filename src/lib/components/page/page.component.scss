@@ -1,0 +1,21 @@
+@use "../../../styles/variables" as *;
+
+:host {
+  width: 100%;
+
+  .ineo-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .ineo-page-header {
+    padding: 2rem 0 1rem 2rem;
+    background-color: $neutral;
+  }
+
+  .ineo-page-content {
+    flex: 1;
+    padding: 2rem;
+  }
+}

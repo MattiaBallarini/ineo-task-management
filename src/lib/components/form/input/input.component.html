@@ -1,0 +1,11 @@
+<mat-form-field class="w-100">
+  <mat-label>{{ label() }}</mat-label>
+  <input
+    matInput
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [errorStateMatcher]="matcher"
+    [formControl]="hcd.control"
+  />
+  <mat-error>{{ hcd.control.errors }}</mat-error>
+</mat-form-field>

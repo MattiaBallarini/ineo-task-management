@@ -1,0 +1,16 @@
+$todo-color: #7ac3ff;
+$done-color: #009a46;
+$progress-color: #ffd95d;
+$neutral: #e9ecef;
+
+$statuses: (
+  todo: $todo-color,
+  done: $done-color,
+  progress: $progress-color,
+);
+
+$statuses-light: (
+  todo: rgba($todo-color, 0.4),
+  done: rgba($done-color, 0.4),
+  progress: rgba($progress-color, 0.6),
+);

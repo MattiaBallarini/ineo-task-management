@@ -1,13 +1,26 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { RouterModule, RouterOutlet } from '@angular/router';
+import { PageComponent } from '@lib';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { TasksFacade } from './store';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    CommonModule,
+    PageComponent,
+    RouterModule,
+    MatSidenavModule,
+    RouterOutlet,
+    MatListModule,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'ineo-task-management';
+  private taskFacade = inject(TasksFacade);
+  protected currentPage$ = this.taskFacade.currentPage$;
 }

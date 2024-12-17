@@ -1,0 +1,30 @@
+<mat-card class="justify-content-center" appearance="raised">
+  <ng-container *isLoading="removing()">
+    <mat-card-header
+      [taskStatus]="task().status"
+      class="d-flex flex-column justify-content-between pt-3 pb-2"
+    >
+      <mat-card-title>{{ task().title }}</mat-card-title>
+      <small> {{ task().date | formatDate : "dd-MM-yyyy" }} </small>
+    </mat-card-header>
+
+    <mat-card-content class="p-3">
+      {{ task().description }}
+    </mat-card-content>
+    <mat-card-actions>
+      <ineo-badge [status]="task().status"></ineo-badge>
+      <div class="w-100 d-flex gap-2 justify-content-end">
+        <button (click)="edit.emit(task())" color="primary" mat-mini-fab>
+          <mat-icon color="primary">edit</mat-icon>
+        </button>
+        <button
+          (click)="delete.emit(task().id || '')"
+          color="warn"
+          mat-mini-fab
+        >
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-actions>
+  </ng-container>
+</mat-card>

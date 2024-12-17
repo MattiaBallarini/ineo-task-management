@@ -1,0 +1,15 @@
+<h4>Today's tasks</h4>
+<ng-container *ngrxLet="statuses$ as statuses">
+  <ng-container *ngrxLet="tasks$ as tasks">
+    <div class="d-flex flex-wrap gap-3">
+      @for (status of statuses; track status) {
+      <ineo-dashboard-column
+        (edit)="openTaskModal($event)"
+        (delete)="deleteTask($event)"
+        [status]="status"
+        [tasks]="tasks | filterTasks : status"
+      ></ineo-dashboard-column>
+      }
+    </div>
+  </ng-container>
+</ng-container>

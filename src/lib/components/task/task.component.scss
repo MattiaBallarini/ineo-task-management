@@ -1,0 +1,19 @@
+:host {
+  display: block;
+
+  mat-card {
+    height: 20rem;
+  }
+
+  mat-card-header {
+    height: 40%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  mat-card-content {
+    flex: 1;
+    overflow-y: auto;
+    height: 40%;
+  }
+}

@@ -1,0 +1,10 @@
+@use "../../../styles/variables" as *;
+
+:host {
+  display: block;
+
+  .ineo-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+}

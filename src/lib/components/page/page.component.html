@@ -1,0 +1,14 @@
+<div class="ineo-page">
+  <header class="ineo-page-header">
+    <div class="d-flex flex-column gap-4">
+      <button (click)="onMenuClicked.emit()" mat-mini-fab color="primary">
+        <mat-icon color="primary">menu</mat-icon>
+      </button>
+      <h2 class="p-text-secondary m-0">{{ title() }}</h2>
+    </div>
+  </header>
+
+  <main class="ineo-page-content">
+    <ng-content></ng-content>
+  </main>
+</div>

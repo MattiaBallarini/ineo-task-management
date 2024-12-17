@@ -1,0 +1,12 @@
+@use "../../../../../styles/variables" as *;
+
+:host {
+  background-color: $neutral;
+  padding: 20px;
+  border-radius: 10px;
+
+  ineo-task {
+    flex: 1;
+    min-width: 300px;
+  }
+}
