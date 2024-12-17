@@ -4,6 +4,7 @@ import { LetDirective } from '@ngrx/component';
 import { TasksFacade } from '../../store';
 import { DashboardColumnComponent } from './components/dashboard-column/dashboard-column.component';
 import { FilterTasksPipe, ITask, SkeletonComponent } from '@lib';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'ineo-dashboard',
@@ -13,6 +14,8 @@ import { FilterTasksPipe, ITask, SkeletonComponent } from '@lib';
     DashboardColumnComponent,
     LetDirective,
     FilterTasksPipe,
+    NgxSkeletonLoaderModule,
+    SkeletonComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

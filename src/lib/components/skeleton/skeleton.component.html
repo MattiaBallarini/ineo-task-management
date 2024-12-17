@@ -1,10 +1,12 @@
-<ngx-skeleton-loader
-  [count]="count()"
-  appearance="line"
-  animation="progress"
-  [theme]="{
-    width: '300px',
-    height: '300px',
-    'margin-right': '20px'
-  }"
-></ngx-skeleton-loader>
+<div class="w-100">
+  <ngx-skeleton-loader
+    [count]="count()"
+    appearance="line"
+    animation="progress"
+    [theme]="{
+      width: width(),
+      height: height(),
+      'margin-right': '23px'
+    }"
+  ></ngx-skeleton-loader>
+</div>
